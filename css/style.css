@@ -4,6 +4,8 @@
 @import "components/hero.css";
 @import "components/ingredients.css";
 @import "components/guarantee.css";
+@import "components/product.css";
+@import "components/shilajit.css";
 
 @font-face {
   font-family: "NewRailAlphabet-Bold";

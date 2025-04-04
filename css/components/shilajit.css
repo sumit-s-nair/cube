@@ -1,0 +1,149 @@
+.shilajit-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  background-color: var(--color-white);
+  font-family: "NewRailAlphabet";
+}
+
+.shilajit-container {
+  max-width: 1400px;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.shilajit-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shilajit-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.shilajit-content {
+  flex: 1;
+}
+
+.shilajit-title {
+  font-size: 2.5rem;
+  color: var(--color-dark-gray);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.shilajit-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-gray);
+  margin-bottom: 2rem;
+}
+
+.shilajit-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fafaf8;
+  padding: 1rem;
+  border-radius: 17px;
+  gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  color: var(--color-dark-gray);
+  line-height: 1.5;
+}
+
+.shilajit-cta {
+  margin-top: 1rem;
+}
+
+.try-shilajit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--website-gold);
+  color: var(--color-black);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-family: "NewRailAlphabet";
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.try-shilajit-btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.shilajit-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-dark-gray);
+}
+
+.icon-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .shilajit-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shilajit-image {
+    margin-bottom: 2rem;
+  }
+
+  .shilajit-benefits {
+    grid-template-columns: 1fr;
+  }
+  .shilajit-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .shilajit-icons {
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .icon-item {
+    flex-direction: column;
+  }
+}

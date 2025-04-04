@@ -2,24 +2,53 @@ import { createHeader } from "./header.js";
 import { createHero } from "./main-components/hero.js";
 import { createIngredients } from "./main-components/ingredient.js";
 import { createGuarantee } from "./main-components/guarantee.js";
+import { createProductSection, initProductSection } from "./main-components/product.js";
+import { createShilajitSection } from "./main-components/shilajit.js";
 
 function createMain() {
-  return `
+  const mainContent = `
     ${createHero()}
     ${createIngredients()}
     ${createGuarantee()}
+    ${createProductSection()}
+    ${createShilajitSection()}
   `;
+  console.log("Generated Main Content:", mainContent); // Debug log
+  return mainContent;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   // Inject header
   document.getElementById("header-container").innerHTML = createHeader();
 
-  // Inject hero section
-  document.getElementById("main-container").innerHTML = createMain();
+  // Inject main content
+  const mainContainer = document.getElementById("main-container");
+  if (mainContainer) {
+    mainContainer.innerHTML = createMain();
+  } else {
+    console.error("Main container not found!"); // Debug log
+  }
 
   // Initialize header functionality
   initializeHeader();
+
+  const container = document.getElementById("product-container");
+  if (container) {
+    container.innerHTML = createProductSection();
+    
+    const imagePaths = [
+      "assets/images/product/main-product.png",
+      "assets/images/product/product-1.png",
+      "assets/images/product/product-2.png",
+      "assets/images/product/product-3.png",
+      "assets/images/product/product-4.png",
+      "assets/images/product/product-5.png",
+      "assets/images/product/product-6.png",
+      "assets/images/product/product-7.png",
+    ];
+    
+    initProductSection(imagePaths);
+  }
 });
 
 function initializeHeader() {
