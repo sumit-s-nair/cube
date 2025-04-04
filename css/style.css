@@ -1,6 +1,7 @@
 @import "variables.css";
-@import "reset.css";
 @import "components/header.css";
+@import "components/footer.css";
+@import "components/hero.css";
 
 @font-face {
   font-family: "NewRailAlphabet-Bold";
@@ -36,7 +37,7 @@
 }
 
 body {
-  font-family: var(--font-regular);
+  font-family: 'NewRailAlphabet';
 }
 
 .gradient-bg {
@@ -46,4 +47,10 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+}
+
+@media (max-width: 1029px) {
+  .mobile-invisible {
+    display: none;
+  }
 }

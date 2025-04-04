@@ -33,7 +33,7 @@ export function createHeader() {
           </nav>
           
           <!-- Search bar (toggles visibility) -->
-          <div class="search-bar" id="search-bar">
+          <div class="search-bar .mobile-invisible" id="search-bar">
             <input type="text" placeholder="Search For Products..." />
           </div>
           

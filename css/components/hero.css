@@ -1,0 +1,179 @@
+.hero-section {
+  width: 100%;
+  padding: 6rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "NewRailAlphabet";
+}
+
+.hero-container {
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Left Content */
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  min-width: fit-content;
+}
+
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "NewRailAlphabet";
+  background-color: var(--color-light-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+}
+
+.star-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.rating-text {
+  font-size: 1rem;
+  color: var(--color-dark-gray);
+}
+
+.rating-subtext {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-headline {
+  font-size: 3.5rem;
+  color: var(--color-dark-gray);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value,
+.stat-unit {
+  font-family: "NewRailAlphabet-Bold";
+  font-size: 4rem;
+  background: var(--website-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-unit {
+  font-family: "NewRailAlphabet-Bold";
+  font-size: 2rem;
+}
+
+.stat-label {
+  font-family: "NewRailAlphabet-Light";
+  font-size: 1rem;
+  color: var(--color-dark-gray);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.shop-now-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--website-gold);
+  color: var(--color-black);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-family: "NewRailAlphabet";
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.shop-now-btn:hover {
+  background-color: var(--color-dark-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.shop-now-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1029px) {
+  .hero-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 2rem;
+  }
+
+  .shop-now-btn {
+    width: auto; /* Ensure the button doesn't stretch */
+    text-align: center;
+  }
+}
