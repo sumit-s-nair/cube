@@ -1,0 +1,36 @@
+:root {
+    --font-regular: 'NewRailAlphabet',;
+    --font-bold: 'NewRailAlphabet-Bold',;
+    --font-light: 'NewRailAlphabet-Light',;
+
+  /* Color Variables */
+  --color-dark-gray: #322d2d;
+  --color-gray: #333;
+  --color-light-gray: #D9D9D9;
+  --color-white: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-primary: #f0b429;
+  --color-primary-dark: #d99a1c;
+  --color-black: #000000;
+
+  /* Gold Gradient */
+  --website-gold: linear-gradient(
+    to left,
+    #caa648,
+    #caa648,
+    #d5b147,
+    #e4c267,
+    #e2c065,
+    #dbb95e,
+    #d0ae52,
+    #c09f41,
+    #bb9a3c
+  );
+
+  --website-gray: linear-gradient(
+    to bottom,
+    #F3F3F3BF,
+    #B8B8B8CC,
+    #F3F3F340,
+  );
+}
