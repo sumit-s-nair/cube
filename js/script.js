@@ -1,12 +1,20 @@
 import { createHeader } from "./header.js";
 import { createHero } from "./main-components/hero.js";
+import { createIngredients } from "./main-components/ingredient.js";
+
+function createMain() {
+  return `
+    ${createHero()}
+    ${createIngredients()}
+  `;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Inject header
   document.getElementById("header-container").innerHTML = createHeader();
 
   // Inject hero section
-  document.getElementById("main-container").innerHTML = createHero();
+  document.getElementById("main-container").innerHTML = createMain();
 
   // Initialize header functionality
   initializeHeader();
