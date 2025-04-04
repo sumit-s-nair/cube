@@ -6,6 +6,9 @@
 @import "components/guarantee.css";
 @import "components/product.css";
 @import "components/shilajit.css";
+@import "components/subscription.css";
+@import "components/morning-ritual.css";
+@import "components/counter-section.css";
 
 @font-face {
   font-family: "NewRailAlphabet-Bold";

@@ -4,6 +4,9 @@ import { createIngredients } from "./main-components/ingredient.js";
 import { createGuarantee } from "./main-components/guarantee.js";
 import { createProductSection, initProductSection } from "./main-components/product.js";
 import { createShilajitSection } from "./main-components/shilajit.js";
+import { createSubscription } from "./main-components/subscription.js";
+import { createMorningRitual } from "./main-components/morning-ritual.js";
+import { createCounterSection, initCounterSection } from "./main-components/counter-section.js";
 
 function createMain() {
   const mainContent = `
@@ -12,8 +15,11 @@ function createMain() {
     ${createGuarantee()}
     ${createProductSection()}
     ${createShilajitSection()}
+    ${createSubscription()}
+    ${createMorningRitual()}
+    ${createCounterSection()}
   `;
-  console.log("Generated Main Content:", mainContent); // Debug log
+  console.log("Generated Main Content:", mainContent);
   return mainContent;
 }
 
@@ -26,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mainContainer) {
     mainContainer.innerHTML = createMain();
   } else {
-    console.error("Main container not found!"); // Debug log
+    console.error("Main container not found!");
   }
 
   // Initialize header functionality
@@ -49,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     initProductSection(imagePaths);
   }
+
+  // Initialize counter section
+  initCounterSection();
 });
 
 function initializeHeader() {
