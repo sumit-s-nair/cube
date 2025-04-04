@@ -272,6 +272,7 @@
   z-index: 1000;
   transition: right 0.3s ease-in-out;
   overflow-y: auto;
+  background-color: var(--color-white);
 }
 
 .mobile-nav.active {

@@ -1,11 +1,13 @@
 import { createHeader } from "./header.js";
 import { createHero } from "./main-components/hero.js";
 import { createIngredients } from "./main-components/ingredient.js";
+import { createGuarantee } from "./main-components/guarantee.js";
 
 function createMain() {
   return `
     ${createHero()}
     ${createIngredients()}
+    ${createGuarantee()}
   `;
 }
 

@@ -3,6 +3,7 @@
 @import "components/footer.css";
 @import "components/hero.css";
 @import "components/ingredients.css";
+@import "components/guarantee.css";
 
 @font-face {
   font-family: "NewRailAlphabet-Bold";
