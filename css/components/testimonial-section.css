@@ -339,6 +339,78 @@
   text-align: center;
 }
 
+/* Swiper styles for testimonial section */
+.testimonial-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--color-gray);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--website-gold);
+}
+
+/* Navigation button styles */
+.testimonial-prev-btn,
+.testimonial-next-btn {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-prev-btn:hover,
+.testimonial-next-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.testimonial-prev-btn img,
+.testimonial-next-btn img {
+  width: 15px;
+  height: 15px;
+}
+
+.testimonial-next-btn img.custom-next {
+  transform: rotate(180deg);
+}
+
+/* Swiper pagination styles */
+.swiper-pagination-bullet {
+  background-color: var(--color-gray);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--website-gold);
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .testimonial-card {
