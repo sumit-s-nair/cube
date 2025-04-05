@@ -234,19 +234,19 @@ export function initProductSection(imagePaths) {
     // Preload first image for immediate display
     const firstImage = new Image();
     firstImage.src = "assets/images/product/main-product.png";
-    
+
     // Force images to load before slider initialization (add timestamp to prevent caching)
-    $('.product-main-slider img').each(function() {
-      $(this).attr('src', $(this).attr('src') + '?v=' + new Date().getTime());
+    $(".product-main-slider img").each(function () {
+      $(this).attr("src", $(this).attr("src") + "?v=" + new Date().getTime());
     });
 
     // Destroy any existing slider
-    if ($('.product-main-slider').hasClass('slick-initialized')) {
-      $('.product-main-slider').slick('unslick');
+    if ($(".product-main-slider").hasClass("slick-initialized")) {
+      $(".product-main-slider").slick("unslick");
     }
-    
+
     // Initialize slider with working configuration
-    $('.product-main-slider').slick({
+    $(".product-main-slider").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
@@ -259,28 +259,28 @@ export function initProductSection(imagePaths) {
       cssEase: "linear",
       speed: 300,
       waitForAnimate: false,
-      lazyLoad: 'ondemand' // Try lazy loading with ondemand strategy
+      lazyLoad: "ondemand", // Try lazy loading with ondemand strategy
     });
 
     // Force slider refresh after initialization
-    setTimeout(function() {
-      $('.product-main-slider').slick('refresh');
+    setTimeout(function () {
+      $(".product-main-slider").slick("refresh");
     }, 200);
 
     // Custom navigation handlers
     $(".custom-prev-product").on("click", function () {
-      $('.product-main-slider').slick('slickPrev');
+      $(".product-main-slider").slick("slickPrev");
     });
 
     $(".custom-next-product").on("click", function () {
-      $('.product-main-slider').slick('slickNext');
+      $(".product-main-slider").slick("slickNext");
     });
 
     // Thumbnail click functionality
     $(".product-thumbnail").on("click", function () {
       const slideIndex = $(this).data("slide");
-      $('.product-main-slider').slick("slickGoTo", slideIndex);
-      
+      $(".product-main-slider").slick("slickGoTo", slideIndex);
+
       $(".product-thumbnail").removeClass("active");
       $(this).addClass("active");
     });
@@ -290,14 +290,18 @@ export function initProductSection(imagePaths) {
       "afterChange",
       function (event, slick, currentSlide) {
         $(".product-thumbnail").removeClass("active");
-        $(`.product-thumbnail[data-slide="${currentSlide}"]`).addClass("active");
+        $(`.product-thumbnail[data-slide="${currentSlide}"]`).addClass(
+          "active"
+        );
       }
     );
 
     // Fix width issues
     $(window).on("load resize", function () {
       setTimeout(function () {
-        $(".product-main-slider .slick-list, .product-main-slider .slick-track").css({
+        $(
+          ".product-main-slider .slick-list, .product-main-slider .slick-track"
+        ).css({
           width: "100%",
         });
       }, 100);

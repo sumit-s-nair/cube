@@ -986,7 +986,7 @@
 }
 
 /* Force slick slider to show images */
-.slick-slider .slick-track, 
+.slick-slider .slick-track,
 .slick-slider .slick-list {
   transform: none !important;
   width: 100% !important;
@@ -1037,7 +1037,7 @@
 }
 
 /* Reset transform that was causing issues but restore transition */
-.slick-slider .slick-track, 
+.slick-slider .slick-track,
 .slick-slider .slick-list {
   transition: transform 0.5s ease !important;
 }

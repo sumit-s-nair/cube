@@ -14,7 +14,7 @@ export function createTestimonialSection() {
           </div>
         </div>
         <p class="testimonial-subheading">Real people, real reviews.</p>
-        <div class="testimonial-slider">
+        <div class="testimonial-slick-slider">
           ${createTestimonials()}
         </div>
       </div>
@@ -114,39 +114,59 @@ function createTestimonials() {
 
 export function initTestimonialSection() {
   $(document).ready(function () {
-    $(".testimonial-slider").slick({
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      dots: true,
-      arrows: false,
-      autoplay: true,
-      autoplaySpeed: 5000,
-      pauseOnHover: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    });
+    function initSlickIfInView() {
+      const slider = $(".testimonial-slick-slider");
+      if (
+        slider.length &&
+        isInViewport(slider[0]) &&
+        !slider.hasClass("slick-initialized")
+      ) {
+        slider.slick({
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          dots: true,
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          pauseOnHover: true,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
+      }
+    }
+
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom > 0
+      );
+    }
+
+    $(window).on("load scroll resize", initSlickIfInView);
+    initSlickIfInView();
 
     // Set up custom navigation
     $(".prev-btn").on("click", function () {
-      $(".testimonial-slider").slick("slickPrev");
+      $(".testimonial-slick-slider").slick("slickPrev");
     });
 
     $(".next-btn").on("click", function () {
-      $(".testimonial-slider").slick("slickNext");
+      $(".testimonial-slick-slider").slick("slickNext");
     });
   });
 }
