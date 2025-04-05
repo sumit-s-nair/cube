@@ -69,3 +69,66 @@
     margin-bottom: 1rem;
   }
 }
+
+/* As Seen In Section */
+.as-seen-in-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.as-seen-in-title {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.as-seen-in-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.as-seen-in-logos img {
+  
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.as-seen-in-logos img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .as-seen-in-title {
+    font-size: 1.25rem;
+  }
+
+  .as-seen-in-logos {
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  .as-seen-in-logos img {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .as-seen-in-title {
+    font-size: 1rem;
+  }
+
+  .as-seen-in-logos img {
+    height: 30px;
+  }
+}

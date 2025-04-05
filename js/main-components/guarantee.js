@@ -37,5 +37,18 @@ export function createGuarantee() {
         </div>
       </div>
     </section>
+    <!-- As Seen In Section -->
+    <section class="as-seen-in-section">
+      <div class="as-seen-in-container">
+        <h2 class="as-seen-in-title">AS SEEN IN</h2>
+        <div class="as-seen-in-logos">
+          <img src="assets/images/logos/fast-company.svg" alt="Fast Company" />
+          <img src="assets/images/logos/forbes.svg" alt="Forbes" />
+          <img src="assets/images/logos/goop.svg" alt="Goop" />
+          <img src="assets/images/logos/time.svg" alt="Time" />
+          <img src="assets/images/logos/nytimes.svg" alt="The New York Times" />
+        </div>
+      </div>
+    </section>
   `;
 }
