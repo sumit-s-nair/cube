@@ -168,12 +168,12 @@
 
   .hero-cta {
     display: flex;
-    justify-content: center; /* Center the button horizontally */
+    justify-content: center;
     margin-top: 2rem;
   }
 
   .shop-now-btn {
-    width: auto; /* Ensure the button doesn't stretch */
+    width: auto;
     text-align: center;
   }
 }

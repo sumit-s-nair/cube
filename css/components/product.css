@@ -28,8 +28,8 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  width: 100%; /* Ensure full width */
-  max-width: 600px; /* Match the max width of the image */
+  width: 100%;
+  max-width: 600px;
 }
 
 .product-heading {
@@ -99,7 +99,7 @@
 .product-dots .slick-dots li button:before {
   width: 10px;
   height: 10px;
-  content: '';
+  content: "";
   border: 1px solid #333;
   border-radius: 50%;
   opacity: 1;
@@ -118,32 +118,60 @@
   flex-direction: column;
   gap: 1rem;
   max-width: 50%;
-  overflow: hidden; 
   display: flex;
-  align-items: center; 
+  align-items: center;
+  overflow: visible; /* Changed from hidden to visible */
 }
 
 .product-main-slider {
-  margin-bottom: 1rem; 
-  width: 100% !important;
-  max-width: 600px; 
-  overflow: hidden; 
-  text-align: center; 
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  overflow: visible; /* Changed from hidden to visible */
 }
 
+/* Remove forced width */
 .product-main-slider .slick-list,
 .product-main-slider .slick-track {
-  width: 100% !important;
+  width: auto !important; /* Changed from 100% to auto */
 }
 
 .product-main-slider img {
-  width: auto; 
-  max-width: 100%;
-  max-height: 400px; 
+  display: block; /* Added display block */
+  width: 100%; /* Changed from auto to 100% */
+  height: auto; /* Keep this */
+  max-height: 400px;
   margin: 0 auto;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure slick slider is showing content properly */
+.product-main-slider .slick-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.product-main-slider .slick-slide.slick-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Fix for slick slide container */
+.product-main-slider .slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Override any Slick CSS that might be hiding content */
+.slick-slider .slick-list .slick-track .slick-slide.slick-active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 1;
 }
 
 .product-thumbnail-slider {
@@ -170,12 +198,12 @@
 
 .product-thumbnails-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   margin-top: 1rem;
   width: 100%;
-  max-width: 600px; 
-  margin: 0 auto; 
+  max-width: 600px;
+  margin: 0 auto;
   justify-content: center;
 }
 
@@ -307,7 +335,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-left: 2rem; 
+  padding-left: 2rem;
 }
 
 .product-title {
@@ -346,7 +374,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Flavor Options Styles - updated to match the provided design */
+/* Flavor Options Styles */
 .product-flavors {
   display: flex;
   gap: 15px;
@@ -362,15 +390,15 @@
   position: relative;
   width: 150px;
   height: 180px;
-  background: #F9F9F9;
-  border: 1px solid #FFFFFF;
+  background: #f9f9f9;
+  border: 1px solid #ffffff;
   border-radius: 6px;
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .flavor-option.original {
-  background: #F9F9F9;
+  background: #f9f9f9;
   border-radius: 6px;
 }
 
@@ -394,7 +422,7 @@
   height: 12px;
   left: 10px;
   top: 10px;
-  background: #F8F8F8;
+  background: #f8f8f8;
   border: 1px solid #919798;
   border-radius: 50%;
   box-sizing: border-box;
@@ -404,8 +432,8 @@
   position: absolute;
   width: 6.5px;
   height: 6.5px;
-  left: 2.7px;
-  top: 2.7px;
+  left: 2px;
+  top: 2.6px;
   border-radius: 50%;
   opacity: 0.5;
 }
@@ -414,7 +442,7 @@
   position: absolute;
   left: 30px;
   top: 8px;
-  font-family: 'NewRailAlphabet';
+  font-family: "NewRailAlphabet";
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -432,24 +460,6 @@
   object-fit: contain;
 }
 
-/* Original flavor styling - selected state */
-.flavor-option.original .radio-circle {
-  border: none;
-}
-
-.flavor-option.original .radio-inner {
-  background: linear-gradient(90deg, #9E6718 0%, #FFB545 100%);
-  opacity: 1;
-}
-
-.flavor-option.original .flavor-name {
-  background: linear-gradient(90deg, #9E6718 0%, #FFB545 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 300;
-}
-
 .best-seller-tag {
   display: flex;
   flex-direction: column;
@@ -459,19 +469,19 @@
   position: absolute;
   width: 78px;
   height: 17px;
-  left: calc(50% - 78px/2);
+  left: calc(50% - 78px / 2);
   top: 162px;
-  background: linear-gradient(90deg, #A27533 0%, #FAC568 100%);
+  background: linear-gradient(90deg, #a27533 0%, #fac568 100%);
   border-radius: 6px 0px;
 }
 
 .best-seller-tag span {
-  font-family: 'NewRailAlphabet';
+  font-family: "NewRailAlphabet";
   font-style: normal;
   font-weight: 700;
   font-size: 10px;
   line-height: 9px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: uppercase;
   width: 100%;
   text-align: center;
@@ -479,12 +489,12 @@
 
 /* Dynamic radio button selection */
 .flavor-option input[type="radio"]:checked + .flavor-content .radio-inner {
-  background: linear-gradient(90deg, #9E6718 0%, #FFB545 100%);
+  background: linear-gradient(90deg, #9e6718 0%, #ffb545 100%);
   opacity: 1;
 }
 
 .flavor-option input[type="radio"]:checked + .flavor-content .flavor-name {
-  background: linear-gradient(90deg, #9E6718 0%, #FFB545 100%);
+  background: linear-gradient(90deg, #9e6718 0%, #ffb545 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -498,7 +508,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .flavor-option {
     margin-bottom: 20px;
   }
@@ -536,8 +546,8 @@
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  background: #FFFFFF;
-  border: 1px solid #B8B8B8;
+  background: #ffffff;
+  border: 1px solid #b8b8b8;
   border-radius: 6px;
   transition: border-color 0.3s ease;
 }
@@ -550,8 +560,8 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #F8F8F8;
-  border: 1px solid #DEA453;
+  background: #f8f8f8;
+  border: 1px solid #dea453;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -564,8 +574,11 @@
   background: transparent;
 }
 
-.pricing-option input[type="radio"]:checked + .pricing-content .pricing-radio-inner {
-  background: linear-gradient(90deg, #9E6718 0%, #FFB545 100%);
+.pricing-option
+  input[type="radio"]:checked
+  + .pricing-content
+  .pricing-radio-inner {
+  background: linear-gradient(90deg, #9e6718 0%, #ffb545 100%);
 }
 
 /* Header styling for options */
@@ -578,11 +591,11 @@
 }
 
 .pricing-label {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 300;
   font-size: 24px;
   line-height: 20px;
-  color: #322D2D;
+  color: #322d2d;
 }
 
 .pricing-value-container {
@@ -592,15 +605,15 @@
 }
 
 .pricing-value {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 300;
   font-size: 24px;
   line-height: 20px;
-  color: #322D2D;
+  color: #322d2d;
 }
 
 .pricing-value del {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 300;
   font-size: 24px;
   line-height: 20px;
@@ -612,7 +625,7 @@
 .popular-tag-container {
   width: 100%;
   height: 43px;
-  background: linear-gradient(90deg, #A27533 0%, #FAC568 100%);
+  background: linear-gradient(90deg, #a27533 0%, #fac568 100%);
   border-radius: 6px 6px 0 0;
   position: absolute;
   top: 0;
@@ -623,11 +636,11 @@
 }
 
 .most-popular-tag {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* Subscription details */
@@ -652,11 +665,11 @@
 }
 
 .subscription-included {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
-  color: #322D2D;
+  color: #322d2d;
   text-align: left;
   margin-bottom: 0.5rem;
 }
@@ -682,11 +695,11 @@
 }
 
 .subscription-text {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 300;
   font-size: 15px;
   line-height: 19px;
-  color: #322D2D;
+  color: #322d2d;
   text-transform: capitalize;
 }
 
@@ -719,11 +732,11 @@
 }
 
 .monthly-product-title {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
-  color: #6F7577;
+  color: #6f7577;
   margin-bottom: 5px;
 }
 
@@ -740,11 +753,11 @@
 }
 
 .one-time-label {
-  font-family: 'NewRailAlphabet', sans-serif;
+  font-family: "NewRailAlphabet", sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
-  color: #6F7577;
+  color: #6f7577;
   margin-bottom: 10px;
   text-align: left;
 }
@@ -755,13 +768,13 @@
   object-fit: contain;
 }
 
-/* Subscription option with "Most Popular" tag needs more top padding */
+/* Subscription option with "Most Popular" */
 .pricing-option-popular .pricing-content {
   padding-top: 3.5rem;
   height: 100%;
 }
 
-/* Make the most popular option taller to fit all content */
+/* Make the most popular option taller */
 .pricing-option-popular {
   min-height: 590px;
 }
@@ -770,18 +783,18 @@
   .subscription-products {
     flex-direction: column;
   }
-  
+
   .monthly-product,
   .one-time-products {
     max-width: 100%;
   }
-  
+
   .pricing-info {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-  
+
   .pricing-label,
   .pricing-value {
     font-size: 18px;
@@ -819,18 +832,18 @@
   .product-container {
     flex-direction: column;
   }
-  
+
   .product-gallery,
   .product-details {
     width: 100%;
   }
-  
+
   .product-flavors {
     justify-content: center;
   }
 
   .product-main-slider img {
-    max-width: 70%; /* Larger percentage on tablet */
+    max-width: 70%;
     max-height: 350px;
   }
 
@@ -842,7 +855,7 @@
     max-width: 100%;
     align-items: center;
   }
-  
+
   .product-details {
     padding-left: 0;
     margin-top: 2rem;
@@ -888,7 +901,7 @@
   .product-title {
     font-size: 2rem;
   }
-  
+
   .product-flavors {
     flex-wrap: wrap;
     justify-content: center;
@@ -907,10 +920,10 @@
 
   .product-thumbnails-grid {
     max-width: 90%;
-    grid-template-columns: repeat(4, 1fr); /* Still 4 columns but smaller */
-    max-width: 350px; /* Smaller on mobile */
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 350px;
   }
-  
+
   .product-thumbnail {
     height: 50px;
     width: 50px;
@@ -922,7 +935,7 @@
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .pricing-header {
     flex-direction: column;
     align-items: flex-start;
@@ -932,4 +945,113 @@
   .product-main-slider img {
     max-height: 300px;
   }
+}
+
+/* Direct fix for slider image visibility issue */
+.product-main-slider .slick-slide {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: auto !important;
+}
+
+.product-main-slider .slick-slide:not(.slick-active) {
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+.product-main-slider .slick-slide.slick-active {
+  position: relative !important;
+  left: auto !important;
+}
+
+.product-main-slider img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+}
+
+/* Fix for slider track and list dimensions */
+.product-main-slider,
+.product-main-slider .slick-list,
+.product-main-slider .slick-track,
+.product-main-slider .slick-slide,
+.product-main-slider .slick-slide > div {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Force slick slider to show images */
+.slick-slider .slick-track, 
+.slick-slider .slick-list {
+  transform: none !important;
+  width: 100% !important;
+}
+
+/* Add this at the end to override any other styles */
+
+/* Keep these critical fixes at the end to ensure images display properly */
+.product-main-slider .slick-slide {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: auto !important;
+}
+
+/* Restore aesthetics while keeping fixes */
+.product-main-slider .slick-slide:not(.slick-active) {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important; /* Hide non-active slides but keep them in the DOM */
+}
+
+.product-main-slider .slick-slide.slick-active {
+  position: relative !important;
+  left: auto !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s ease;
+}
+
+/* Style the product images but keep display fixes */
+.product-main-slider img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make container height fixed to prevent jumping */
+.product-main-slider,
+.product-main-slider .slick-list {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reset transform that was causing issues but restore transition */
+.slick-slider .slick-track, 
+.slick-slider .slick-list {
+  transition: transform 0.5s ease !important;
+}
+
+/* Restore custom navigation styling */
+.product-nav-buttons {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Remove any !important rules that might be affecting aesthetics */
+.product-gallery {
+  overflow: visible; /* Keep this to ensure images aren't cut off */
 }

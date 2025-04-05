@@ -37,11 +37,6 @@ export function createHeader() {
             <input type="text" placeholder="Search For Products..." />
           </div>
           
-          <!-- Mobile search bar (between logo and icons) -->
-          <div class="mobile-search-bar">
-            <input type="text" placeholder="Search For Products..." />
-          </div>
-          
           <!-- Actions on the right -->
           <div class="header-actions">
             <button class="search-btn" id="search-toggle">

@@ -30,7 +30,6 @@ function createMain() {
     ${createFAQSection()}
     ${createNewsletterSection()}
   `;
-  console.log("Generated Main Content:", mainContent);
   return mainContent;
 }
 

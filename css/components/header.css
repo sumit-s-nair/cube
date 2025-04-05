@@ -6,6 +6,7 @@
   color: var(--color-white);
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 10px 0;
   font-size: 14px;
@@ -280,7 +281,7 @@
 }
 
 .mobile-nav-container {
-  font-family: 'NewRailAlphabet';
+  font-family: "NewRailAlphabet";
   position: relative;
   width: 100%;
   height: 100%;
@@ -312,7 +313,7 @@
   margin-top: 2rem;
 }
 
-.try-btn-mobile{
+.try-btn-mobile {
   width: 100%;
   height: 40px;
   transition: all 0.3s ease;
@@ -375,11 +376,11 @@
   .desktop-only {
     display: flex;
   }
-  
+
   .hamburger {
     display: none;
   }
-  
+
   .mobile-search-bar {
     display: none;
   }
@@ -389,19 +390,19 @@
   .desktop-nav {
     display: none;
   }
-  
+
   .desktop-only {
     display: none;
   }
-  
+
   .hamburger {
     display: flex;
   }
-  
+
   .mobile-search-bar {
     display: flex;
   }
-  
+
   .main-header {
     padding: 0 1.5rem;
   }

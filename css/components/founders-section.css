@@ -76,9 +76,9 @@
 }
 
 .founders-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .founders-description {
@@ -110,7 +110,6 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-
   .video-thumbnail {
     max-width: 100%;
   }

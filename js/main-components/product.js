@@ -8,7 +8,7 @@ function createFlavorOptions() {
             <div class="radio-inner"></div>
           </div>
           <span class="flavor-name">Original</span>
-          <img src="assets/images/product/flavors/original.png" alt="Original Flavor" class="flavor-image" loading="lazy" />
+          <img src="assets/images/product/flavors/original.png" alt="Original Flavor" class="flavor-image" />
           <div class="best-seller-tag">
             <span>Best-Seller</span>
           </div>
@@ -22,7 +22,7 @@ function createFlavorOptions() {
             <div class="radio-inner"></div>
           </div>
           <span class="flavor-name">Matcha</span>
-          <img src="assets/images/product/flavors/matcha.png" alt="Matcha Flavor" class="flavor-image" loading="lazy" />
+          <img src="assets/images/product/flavors/matcha.png" alt="Matcha Flavor" class="flavor-image" />
         </div>
       </label>
       
@@ -33,7 +33,7 @@ function createFlavorOptions() {
             <div class="radio-inner"></div>
           </div>
           <span class="flavor-name">Cacao</span>
-          <img src="assets/images/product/flavors/cacao.png" alt="Cacao Flavor" class="flavor-image" loading="lazy" />
+          <img src="assets/images/product/flavors/cacao.png" alt="Cacao Flavor" class="flavor-image" />
         </div>
       </label>
     </div>
@@ -153,14 +153,14 @@ export function createProductSection() {
         <!-- Left Content - Product Gallery -->
         <div class="product-gallery">
           <div class="product-main-slider">
-            <div><img src="assets/images/product/main-product.png" alt="Alcami Elements" loading="lazy" /></div>
-            <div><img src="assets/images/product/product-1.png" alt="Alcami Elements Side" loading="lazy" /></div>
-            <div><img src="assets/images/product/product-2.png" alt="Alcami Elements Top" loading="lazy" /></div>
-            <div><img src="assets/images/product/product-3.png" alt="Alcami Elements Ingredients" loading="lazy" /></div>
-            <div><img src="assets/images/product/product-4.png" alt="Alcami Elements Packaging" loading="lazy" /></div>
-            <div><img src="assets/images/product/product-5.png" alt="Alcami Elements Usage" loading="lazy" /></div>
-            <div><img src="assets/images/product/product-6.png" alt="Alcami Elements Bottle" loading="lazy" /></div>
-            <div><img src="assets/images/product/product-7.png" alt="Alcami Elements Complete" loading="lazy" /></div>
+            <div><img src="assets/images/product/main-product.png" alt="Alcami Elements" data-lazy="assets/images/product/main-product.png" /></div>
+            <div><img src="assets/images/product/product-1.png" alt="Alcami Elements Side" data-lazy="assets/images/product/product-1.png" /></div>
+            <div><img src="assets/images/product/product-2.png" alt="Alcami Elements Top" data-lazy="assets/images/product/product-2.png" /></div>
+            <div><img src="assets/images/product/product-3.png" alt="Alcami Elements Ingredients" data-lazy="assets/images/product/product-3.png" /></div>
+            <div><img src="assets/images/product/product-4.png" alt="Alcami Elements Packaging" data-lazy="assets/images/product/product-4.png" /></div>
+            <div><img src="assets/images/product/product-5.png" alt="Alcami Elements Usage" data-lazy="assets/images/product/product-5.png" /></div>
+            <div><img src="assets/images/product/product-6.png" alt="Alcami Elements Bottle" data-lazy="assets/images/product/product-6.png" /></div>
+            <div><img src="assets/images/product/product-7.png" alt="Alcami Elements Complete" data-lazy="assets/images/product/product-7.png" /></div>
           </div>
           <div class="product-heading-container">
             <div class="product-nav-buttons">
@@ -182,7 +182,9 @@ export function createProductSection() {
         <div class="product-details">
           <h2 class="product-title">Alcami Elements</h2>
           <div class="product-rating">
-            <span class="rating-stars">${'<img src="assets/icons/star.svg" alt="Star" />'.repeat(5)}</span>
+            <span class="rating-stars">${'<img src="assets/icons/star.svg" alt="Star" />'.repeat(
+              5
+            )}</span>
             <span class="rating-text">4.7 (999+ reviews)</span>
           </div>
           <p class="product-description">
@@ -212,72 +214,100 @@ function createThumbnails() {
     "assets/images/product/product-4.png",
     "assets/images/product/product-5.png",
     "assets/images/product/product-6.png",
-    "assets/images/product/product-7.png"
+    "assets/images/product/product-7.png",
   ];
 
-  return thumbnails.map((src, index) => 
-    `<div class="product-thumbnail ${index === 0 ? 'active' : ''}" data-slide="${index}">
-      <img src="${src}" alt="Thumbnail ${index + 1}" loading="lazy" />
+  return thumbnails
+    .map(
+      (src, index) =>
+        `<div class="product-thumbnail ${
+          index === 0 ? "active" : ""
+        }" data-slide="${index}">
+      <img src="${src}" alt="Thumbnail ${index + 1}" />
     </div>`
-  ).join('');
+    )
+    .join("");
 }
 
-export function initProductSection() {
-  $(document).ready(function() {
-    // Initialize main slider with proper constraints
+export function initProductSection(imagePaths) {
+  $(document).ready(function () {
+    // Preload first image for immediate display
+    const firstImage = new Image();
+    firstImage.src = "assets/images/product/main-product.png";
+    
+    // Force images to load before slider initialization (add timestamp to prevent caching)
+    $('.product-main-slider img').each(function() {
+      $(this).attr('src', $(this).attr('src') + '?v=' + new Date().getTime());
+    });
+
+    // Destroy any existing slider
+    if ($('.product-main-slider').hasClass('slick-initialized')) {
+      $('.product-main-slider').slick('unslick');
+    }
+    
+    // Initialize slider with working configuration
     $('.product-main-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       fade: true,
       dots: true,
-      appendDots: $('.product-dots'),
+      appendDots: $(".product-dots"),
       autoplay: false,
-      infinite: false, // Prevent infinite loop which can cause width issues
-      adaptiveHeight: true,
-      cssEase: 'linear',
-      waitForAnimate: false
+      infinite: true,
+      adaptiveHeight: false,
+      cssEase: "linear",
+      speed: 300,
+      waitForAnimate: false,
+      lazyLoad: 'ondemand' // Try lazy loading with ondemand strategy
     });
-    
-    // Set up custom navigation
-    $('.custom-prev-product').on('click', function() {
+
+    // Force slider refresh after initialization
+    setTimeout(function() {
+      $('.product-main-slider').slick('refresh');
+    }, 200);
+
+    // Custom navigation handlers
+    $(".custom-prev-product").on("click", function () {
       $('.product-main-slider').slick('slickPrev');
     });
-    
-    $('.custom-next-product').on('click', function() {
+
+    $(".custom-next-product").on("click", function () {
       $('.product-main-slider').slick('slickNext');
     });
-    
+
     // Thumbnail click functionality
-    $('.product-thumbnail').on('click', function() {
-      const slideIndex = $(this).data('slide');
-      $('.product-main-slider').slick('slickGoTo', slideIndex);
+    $(".product-thumbnail").on("click", function () {
+      const slideIndex = $(this).data("slide");
+      $('.product-main-slider').slick("slickGoTo", slideIndex);
       
-      // Update active thumbnail
-      $('.product-thumbnail').removeClass('active');
-      $(this).addClass('active');
+      $(".product-thumbnail").removeClass("active");
+      $(this).addClass("active");
     });
-    
+
     // Keep thumbnails in sync with slider
-    $('.product-main-slider').on('afterChange', function(event, slick, currentSlide) {
-      $('.product-thumbnail').removeClass('active');
-      $(`.product-thumbnail[data-slide="${currentSlide}"]`).addClass('active');
-    });
-    
-    // Fix any potential width issues
-    $(window).on('load resize', function() {
-      setTimeout(function() {
-        $('.product-main-slider .slick-list, .product-main-slider .slick-track').css({
-          'width': '100%'
+    $(".product-main-slider").on(
+      "afterChange",
+      function (event, slick, currentSlide) {
+        $(".product-thumbnail").removeClass("active");
+        $(`.product-thumbnail[data-slide="${currentSlide}"]`).addClass("active");
+      }
+    );
+
+    // Fix width issues
+    $(window).on("load resize", function () {
+      setTimeout(function () {
+        $(".product-main-slider .slick-list, .product-main-slider .slick-track").css({
+          width: "100%",
         });
       }, 100);
     });
-    
+
     // Update Add to Cart link based on radio selections
     updateAddToCartLink();
-    
+
     // Add event listeners for radio button changes
-    $('input[name="flavor"], input[name="purchase-type"]').change(function() {
+    $('input[name="flavor"], input[name="purchase-type"]').change(function () {
       updateAddToCartLink();
     });
   });
@@ -287,21 +317,18 @@ export function initProductSection() {
 function updateAddToCartLink() {
   const flavor = $('input[name="flavor"]:checked').val();
   const purchaseType = $('input[name="purchase-type"]:checked').val();
-  
+
   // Create cart link based on selections
   let cartLink = "https://example.com/cart?product=alcami-elements";
-  
+
   if (flavor) {
     cartLink += `&flavor=${flavor}`;
   }
-  
+
   if (purchaseType) {
     cartLink += `&type=${purchaseType}`;
   }
-  
+
   // Update the href attribute of the Add to Cart button
-  $('#add-to-cart').attr('href', cartLink);
-  
-  // Log for debugging
-  console.log(`Updated cart link: ${cartLink}`);
+  $("#add-to-cart").attr("href", cartLink);
 }
