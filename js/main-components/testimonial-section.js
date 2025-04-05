@@ -21,6 +21,8 @@ export function createTestimonialSection() {
           <!-- Pagination -->
           <div class="swiper-pagination testimonial-pagination"></div>
         </div>
+        <!-- Temporary Dots -->
+        <div class="testimonial-temp-dots"></div>
       </div>
     </section>
   `;
@@ -96,11 +98,7 @@ function createTestimonials() {
       (testimonial) => `
         <div class="swiper-slide testimonial-card">
           <div class="testimonial-rating">
-            <img src="assets/icons/star-green.svg" alt="Star" />
-            <img src="assets/icons/star-green.svg" alt="Star" />
-            <img src="assets/icons/star-green.svg" alt="Star" />
-            <img src="assets/icons/star-green.svg" alt="Star" />
-            <img src="assets/icons/star-green.svg" alt="Star" />
+            ${'<img src="assets/icons/star-green.svg" alt="Star" />'.repeat(5)}
           </div>
           <p class="testimonial-text">
             "${testimonial.text}"
@@ -119,7 +117,6 @@ function createTestimonials() {
 }
 
 export function initTestimonialSection() {
-  // Ensure proper spacing between slides
   document.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".testimonial-swiper", {
       slidesPerView: 3,
@@ -136,7 +133,7 @@ export function initTestimonialSection() {
         delay: 5000,
         disableOnInteraction: false,
       },
-      loop: true, // Enable infinite scrolling
+      loop: true,
       breakpoints: {
         1024: {
           slidesPerView: 2,
@@ -147,5 +144,15 @@ export function initTestimonialSection() {
         },
       },
     });
+
+    // Link temporary dots to Swiper pagination
+    const tempDots = document.querySelector(".testimonial-temp-dots");
+    if (tempDots) {
+      swiper.on("paginationUpdate", () => {
+        tempDots.innerHTML = swiper.pagination.bullets
+          .map((bullet, index) => `<span class="temp-dot ${bullet.className}" data-index="${index}"></span>`)
+          .join("");
+      });
+    }
   });
 }

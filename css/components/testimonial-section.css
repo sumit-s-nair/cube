@@ -1287,3 +1287,55 @@
   color: var(--color-gray);
   margin: 0;
 }
+
+/* Temporary Dots */
+.testimonial-temp-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.temp-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-gray);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.temp-dot.swiper-pagination-bullet-active {
+  background-color: var(--website-gold);
+}
+
+/* Navigation Button Styles */
+.testimonial-prev-btn,
+.testimonial-next-btn {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-prev-btn:hover,
+.testimonial-next-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.testimonial-prev-btn img,
+.testimonial-next-btn img {
+  width: 15px;
+  height: 15px;
+}
+
+.testimonial-next-btn img.custom-next {
+  transform: rotate(180deg);
+}
