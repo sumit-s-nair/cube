@@ -96,7 +96,11 @@ function createTestimonials() {
       (testimonial) => `
         <div class="swiper-slide testimonial-card">
           <div class="testimonial-rating">
-            ${'<img src="assets/icons/star-green.svg" alt="Star" />'.repeat(5)}
+            <img src="assets/icons/star-green.svg" alt="Star" />
+            <img src="assets/icons/star-green.svg" alt="Star" />
+            <img src="assets/icons/star-green.svg" alt="Star" />
+            <img src="assets/icons/star-green.svg" alt="Star" />
+            <img src="assets/icons/star-green.svg" alt="Star" />
           </div>
           <p class="testimonial-text">
             "${testimonial.text}"
@@ -115,6 +119,7 @@ function createTestimonials() {
 }
 
 export function initTestimonialSection() {
+  // Ensure proper spacing between slides
   document.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".testimonial-swiper", {
       slidesPerView: 3,
@@ -135,14 +140,12 @@ export function initTestimonialSection() {
       breakpoints: {
         1024: {
           slidesPerView: 2,
+          spaceBetween: 10,
         },
         768: {
           slidesPerView: 1,
         },
       },
     });
-
-    // Debugging navigation and pagination
-    console.log("Swiper initialized:", swiper);
   });
 }

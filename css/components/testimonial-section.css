@@ -1223,3 +1223,67 @@
     width: 60px;
   }
 }
+
+/* Testimonial Card Styles */
+.testimonial-card {
+  flex: 0 0 auto;
+  width: calc(33.333% - 20px); /* For 3 slides at a time */
+  margin: 0 10px;
+  box-sizing: border-box;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: left;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
+}
+
+.testimonial-rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.testimonial-rating img {
+  width: 16px;
+  height: 16px;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-dark-gray);
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--website-gold);
+}
+
+.author-info {
+  text-align: left;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.author-position {
+  font-size: 0.875rem;
+  color: var(--color-gray);
+  margin: 0;
+}
