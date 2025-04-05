@@ -12,6 +12,8 @@
 @import "components/comparison-section.css";
 @import "components/founders-section.css";
 @import "components/testimonial-section.css";
+@import "components/faq.css";
+@import "components/newsletter.css";
 
 @font-face {
   font-family: "NewRailAlphabet-Bold";

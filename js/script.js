@@ -10,6 +10,9 @@ import { createCounterSection, initCounterSection } from "./main-components/coun
 import { createComparisonSection } from "./main-components/comparison-section.js";
 import { createFoundersSection } from "./main-components/founders-section.js";
 import { createTestimonialSection, initTestimonialSection } from "./main-components/testimonial-section.js";
+import { createFAQSection, initFAQSection } from "./main-components/faq.js";
+import { createNewsletterSection } from "./main-components/newsletter.js";
+import { createFooter } from "./footer.js";
 
 function createMain() {
   const mainContent = `
@@ -24,6 +27,8 @@ function createMain() {
     ${createComparisonSection()}
     ${createFoundersSection()}
     ${createTestimonialSection()}
+    ${createFAQSection()}
+    ${createNewsletterSection()}
   `;
   console.log("Generated Main Content:", mainContent);
   return mainContent;
@@ -40,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Main container not found!");
   }
+
+  // Inject footer
+  document.getElementById("footer-container").innerHTML = createFooter();
 
   // Initialize header functionality
   initializeHeader();
@@ -70,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Initialize product section
   initProductSection();
+
+  // Initialize FAQ section
+  initFAQSection();
 });
 
 function initializeHeader() {
