@@ -120,7 +120,7 @@
   max-width: 50%;
   display: flex;
   align-items: center;
-  overflow: visible; /* Changed from hidden to visible */
+  overflow: visible;
 }
 
 .product-main-slider {
@@ -128,19 +128,18 @@
   width: 100%;
   max-width: 600px;
   text-align: center;
-  overflow: visible; /* Changed from hidden to visible */
+  overflow: visible;
 }
 
-/* Remove forced width */
 .product-main-slider .slick-list,
 .product-main-slider .slick-track {
-  width: auto !important; /* Changed from 100% to auto */
+  width: auto !important;
 }
 
 .product-main-slider img {
-  display: block; /* Added display block */
-  width: 100%; /* Changed from auto to 100% */
-  height: auto; /* Keep this */
+  display: block;
+  width: 100%;
+  height: auto;
   max-height: 400px;
   margin: 0 auto;
   object-fit: contain;
@@ -148,7 +147,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Make sure slick slider is showing content properly */
 .product-main-slider .slick-slide {
   opacity: 0;
   visibility: hidden;
@@ -160,14 +158,12 @@
   visibility: visible;
 }
 
-/* Fix for slick slide container */
 .product-main-slider .slick-slide > div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Override any Slick CSS that might be hiding content */
 .slick-slider .slick-list .slick-track .slick-slide.slick-active {
   visibility: visible !important;
   opacity: 1 !important;
@@ -500,7 +496,7 @@
   background-clip: text;
 }
 
-/* Responsive adjustment */
+/* Responsive */
 @media (max-width: 768px) {
   .product-flavors {
     width: 100%;
@@ -985,16 +981,12 @@
   justify-content: center;
 }
 
-/* Force slick slider to show images */
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   transform: none !important;
   width: 100% !important;
 }
 
-/* Add this at the end to override any other styles */
-
-/* Keep these critical fixes at the end to ensure images display properly */
 .product-main-slider .slick-slide {
   opacity: 1 !important;
   visibility: visible !important;
@@ -1002,11 +994,10 @@
   z-index: auto !important;
 }
 
-/* Restore aesthetics while keeping fixes */
 .product-main-slider .slick-slide:not(.slick-active) {
   position: absolute !important;
   left: -9999px !important;
-  opacity: 0 !important; /* Hide non-active slides but keep them in the DOM */
+  opacity: 0 !important;
 }
 
 .product-main-slider .slick-slide.slick-active {
@@ -1016,7 +1007,6 @@
   transition: opacity 0.5s ease;
 }
 
-/* Style the product images but keep display fixes */
 .product-main-slider img {
   display: block !important;
   max-width: 100% !important;
@@ -1027,7 +1017,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Make container height fixed to prevent jumping */
 .product-main-slider,
 .product-main-slider .slick-list {
   min-height: 400px;
@@ -1036,7 +1025,6 @@
   justify-content: center;
 }
 
-/* Reset transform that was causing issues but restore transition */
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   transition: transform 0.5s ease !important;
@@ -1051,9 +1039,8 @@
   gap: 1rem;
 }
 
-/* Remove any !important rules that might be affecting aesthetics */
 .product-gallery {
-  overflow: visible; /* Keep this to ensure images aren't cut off */
+  overflow: visible;
 }
 
 /* Scope Slick styles to the product section */
@@ -1145,7 +1132,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Fix for slider track and list dimensions */
+/* Slider track and list dimensions */
 .product-main-slider,
 .product-main-slider .slick-list,
 .product-main-slider .slick-track,
@@ -1173,7 +1160,7 @@
   gap: 1rem;
 }
 
-/* Ensure thumbnails are styled correctly */
+/* Thumbnails */
 .product-thumbnails-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

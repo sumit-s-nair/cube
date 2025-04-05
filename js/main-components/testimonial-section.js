@@ -29,7 +29,7 @@ export function createTestimonialSection() {
 }
 
 function createTestimonials() {
-  // Hard-coded 12 testimonials
+  // Testimonials
   const testimonials = [
     {
       text: "Alcami has completely transformed my morning routine. The mental clarity and energy I get is unlike anything else I've tried.",
@@ -145,7 +145,7 @@ export function initTestimonialSection() {
       },
     });
 
-    // Link temporary dots to Swiper pagination
+    // Pagination
     const tempDots = document.querySelector(".testimonial-temp-dots");
     if (tempDots) {
       swiper.on("paginationUpdate", () => {

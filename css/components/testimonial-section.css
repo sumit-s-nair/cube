@@ -70,7 +70,7 @@
 /* Testimonial Card Styles */
 .testimonial-card {
   flex: 0 0 auto;
-  width: calc(33.333% - 20px); /* For 3 slides at a time */
+  width: calc(33.333% - 20px); 
   margin: 0 10px;
   box-sizing: border-box;
   background-color: var(--color-white);
@@ -78,7 +78,7 @@
   padding: 1.5rem;
   text-align: left;
   height: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-rating {
