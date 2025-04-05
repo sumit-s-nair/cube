@@ -164,6 +164,11 @@
     font-size: 2.5rem;
   }
 
+  .learn-more-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .video-player {
     max-width: 100%;
   }

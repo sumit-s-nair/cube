@@ -9,6 +9,9 @@
 @import "components/subscription.css";
 @import "components/morning-ritual.css";
 @import "components/counter-section.css";
+@import "components/comparison-section.css";
+@import "components/founders-section.css";
+@import "components/testimonial-section.css";
 
 @font-face {
   font-family: "NewRailAlphabet-Bold";

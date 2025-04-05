@@ -1,0 +1,126 @@
+.comparison-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comparison-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile devices */
+}
+
+.comparison-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  margin-bottom: 2rem;
+}
+
+.comparison-table {
+  min-width: 1000px; /* Set a minimum width for the table */
+  width: 100%; /* Allow the table to take full width */
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  table-layout: auto; /* Allow columns to adjust based on content */
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: none;
+  border-bottom: 1px solid var(--color-gray);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+.comparison-table th {
+  background-color: var(--color-white);
+  font-weight: 700;
+  color: var(--color-dark-gray);
+}
+
+.comparison-table td {
+  background-color: var(--color-white);
+  color: var(--color-gray);
+}
+
+.comparison-table th img {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 120px;
+}
+
+.comparison-table td img {
+  max-width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.comparison-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.comparison-table th:nth-child(2),
+.comparison-table td:nth-child(2) {
+  background-color: #f0eee6;
+  border-bottom: 1px dotted var(--color-gray);
+}
+
+.comparison-table th:nth-child(2) {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.comparison-table td:nth-child(2):last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.comparison-cta {
+  margin-top: 2rem;
+}
+
+.gold-btn {
+  background: var(--website-gold);
+  color: var(--color-black);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gold-btn:hover {
+  background-color: var(--color-dark-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .comparison-table {
+    font-size: 0.875rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem; 
+  }
+
+  .comparison-table img {
+    max-width: 40px;
+  }
+
+  .comparison-heading {
+    font-size: 1.5rem;
+  }
+}

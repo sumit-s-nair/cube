@@ -1,5 +1,210 @@
+function createFlavorOptions() {
+  return `
+    <div class="product-flavors">
+      <label class="flavor-option original">
+        <input type="radio" name="flavor" value="original" checked />
+        <div class="flavor-content">
+          <div class="radio-circle">
+            <div class="radio-inner"></div>
+          </div>
+          <span class="flavor-name">Original</span>
+          <img src="assets/images/product/flavors/original.png" alt="Original Flavor" class="flavor-image" loading="lazy" />
+          <div class="best-seller-tag">
+            <span>Best-Seller</span>
+          </div>
+        </div>
+      </label>
+      
+      <label class="flavor-option">
+        <input type="radio" name="flavor" value="matcha" />
+        <div class="flavor-content">
+          <div class="radio-circle">
+            <div class="radio-inner"></div>
+          </div>
+          <span class="flavor-name">Matcha</span>
+          <img src="assets/images/product/flavors/matcha.png" alt="Matcha Flavor" class="flavor-image" loading="lazy" />
+        </div>
+      </label>
+      
+      <label class="flavor-option">
+        <input type="radio" name="flavor" value="cacao" />
+        <div class="flavor-content">
+          <div class="radio-circle">
+            <div class="radio-inner"></div>
+          </div>
+          <span class="flavor-name">Cacao</span>
+          <img src="assets/images/product/flavors/cacao.png" alt="Cacao Flavor" class="flavor-image" loading="lazy" />
+        </div>
+      </label>
+    </div>
+  `;
+}
+
+function createPricingOptions() {
+  return `
+    <div class="pricing-options">
+      <label class="pricing-option pricing-option-popular">
+        <input type="radio" name="purchase-type" value="single-subscription" checked />
+        <div class="pricing-content">
+          <div class="popular-tag-container">
+            <span class="most-popular-tag">Most Popular</span>
+          </div>
+          <div class="pricing-radio">
+            <div class="pricing-radio-inner"></div>
+          </div>
+          <div class="pricing-info">
+            <span class="pricing-label">Single Kit Subscription</span>
+            <div class="pricing-value-container">
+              <span class="pricing-value">$37 USD</span>
+              <del>$46</del>
+            </div>
+          </div>
+          
+          <div class="subscription-details">
+            <p class="subscription-included">What's Included:</p>
+            <div class="subscription-products">
+              <div class="monthly-product product-box">
+                <div class="monthly-product-title">Every 30 Days</div>
+                <img src="assets/images/product/flavors/original.png" alt="Monthly Product" />
+              </div>
+              <div class="one-time-products product-box">
+                <div class="one-time-label">One Time (Free)</div>
+                <img src="assets/images/product/one-time.png" alt="One Time Product" />
+              </div>
+            </div>
+            <div class="subscription-item">
+              <div class="subscription-icon">
+                <img src="assets/icons/check.svg" alt="Check" />
+              </div>
+              <span class="subscription-text">30 servings shipped monthly</span>
+            </div>
+            <div class="subscription-item">
+              <div class="subscription-icon">
+                <img src="assets/icons/check.svg" alt="Check" />
+              </div>
+              <span class="subscription-text"><span class="highlight">Free</span> Golden Kit Gold bottle + spoon (42$ value)</span>
+            </div>
+            <div class="subscription-item">
+              <div class="subscription-icon">
+                <img src="assets/icons/check.svg" alt="Check" />
+              </div>
+              <span class="subscription-text"><span class="highlight">Free</span> 60 days supply of Alcami Shilajit ($78 value)</span>
+            </div>
+            <div class="subscription-item">
+              <div class="subscription-icon">
+                <img src="assets/icons/check.svg" alt="Check" />
+              </div>
+              <span class="subscription-text"><span class="highlight">50% OFF</span> Shipping (Over $7-$10 in savings)</span>
+            </div>
+            <div class="subscription-item">
+              <div class="subscription-icon">
+                <img src="assets/icons/check.svg" alt="Check" />
+              </div>
+              <span class="subscription-text">Pause or Cancel Anytime after 3 months minimum</span>
+            </div>
+            <div class="subscription-item">
+              <div class="subscription-icon">
+                <img src="assets/icons/check.svg" alt="Check" />
+              </div>
+              <span class="subscription-text">90 Day Money Back Guarantee*</span>
+            </div>
+          </div>
+        </div>
+      </label>
+      
+      <label class="pricing-option">
+        <input type="radio" name="purchase-type" value="double-subscription" />
+        <div class="pricing-content">
+          <div class="pricing-radio">
+            <div class="pricing-radio-inner"></div>
+          </div>
+          <div class="pricing-info">
+            <span class="pricing-label">Double Kit Subscription</span>
+            <div class="pricing-value-container">
+              <span class="pricing-value">$68 USD</span>
+              <del>$83</del>
+            </div>
+          </div>
+        </div>
+      </label>
+      
+      <label class="pricing-option">
+        <input type="radio" name="purchase-type" value="one-time" />
+        <div class="pricing-content">
+          <div class="pricing-radio">
+            <div class="pricing-radio-inner"></div>
+          </div>
+          <div class="pricing-info">
+            <span class="pricing-label">Try Once</span>
+            <div class="pricing-value-container">
+              <span class="pricing-value">$46 USD</span>
+            </div>
+          </div>
+        </div>
+      </label>
+    </div>
+  `;
+}
+
 export function createProductSection() {
-  const imagePaths = [
+  return `
+    <section class="product-section">
+      <div class="product-container">
+        <!-- Left Content - Product Gallery -->
+        <div class="product-gallery">
+          <div class="product-main-slider">
+            <div><img src="assets/images/product/main-product.png" alt="Alcami Elements" loading="lazy" /></div>
+            <div><img src="assets/images/product/product-1.png" alt="Alcami Elements Side" loading="lazy" /></div>
+            <div><img src="assets/images/product/product-2.png" alt="Alcami Elements Top" loading="lazy" /></div>
+            <div><img src="assets/images/product/product-3.png" alt="Alcami Elements Ingredients" loading="lazy" /></div>
+            <div><img src="assets/images/product/product-4.png" alt="Alcami Elements Packaging" loading="lazy" /></div>
+            <div><img src="assets/images/product/product-5.png" alt="Alcami Elements Usage" loading="lazy" /></div>
+            <div><img src="assets/images/product/product-6.png" alt="Alcami Elements Bottle" loading="lazy" /></div>
+            <div><img src="assets/images/product/product-7.png" alt="Alcami Elements Complete" loading="lazy" /></div>
+          </div>
+          <div class="product-heading-container">
+            <div class="product-nav-buttons">
+              <button class="custom-prev-product">
+                <img src="assets/icons/arrow-left.svg" alt="Previous" />
+              </button>
+              <div class="product-dots"></div>
+              <button class="custom-next-product">
+                <img src="assets/icons/arrow-left.svg" alt="Next" />
+              </button>
+            </div>
+          </div>
+          <div class="product-thumbnails-grid">
+            ${createThumbnails()}
+          </div>
+        </div>
+
+        <!-- Right Content - Product Details -->
+        <div class="product-details">
+          <h2 class="product-title">Alcami Elements</h2>
+          <div class="product-rating">
+            <span class="rating-stars">${'<img src="assets/icons/star.svg" alt="Star" />'.repeat(5)}</span>
+            <span class="rating-text">4.7 (999+ reviews)</span>
+          </div>
+          <p class="product-description">
+            Discover the ancient wisdom supported by modern science, all within the synergy of Alcami Elements. Designed for those who aspire to elevate every facet of life with awareness and intention.
+          </p>
+          
+          <h3 class="product-options-title">Choose a flavor</h3>
+          ${createFlavorOptions()}
+          
+          <div class="product-pricing">
+            ${createPricingOptions()}
+          </div>
+          
+          <a href="#" class="add-to-cart-btn" id="add-to-cart">Add to Cart →</a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function createThumbnails() {
+  const thumbnails = [
     "assets/images/product/main-product.png",
     "assets/images/product/product-1.png",
     "assets/images/product/product-2.png",
@@ -7,148 +212,96 @@ export function createProductSection() {
     "assets/images/product/product-4.png",
     "assets/images/product/product-5.png",
     "assets/images/product/product-6.png",
-    "assets/images/product/product-7.png",
+    "assets/images/product/product-7.png"
   ];
 
-  // Dots for all images
-  const dotsHTML = imagePaths
-    .map((_, index) => `<span class="gallery-dot ${index === 0 ? "active" : ""}" data-index="${index}"></span>`)
-    .join("");
-
-  // Thumbnails (excluding the first main image)
-  let thumbnailsHTML = '<div class="thumbnails-row">';
-  imagePaths.slice(1).forEach((path, i) => {
-    const actualIndex = i + 1;
-    if (i > 0 && i % 4 === 0) {
-      thumbnailsHTML += '</div><div class="thumbnails-row">';
-    }
-    thumbnailsHTML += `
-      <img src="${path}" alt="Thumbnail ${actualIndex}" 
-           class="${actualIndex === 1 ? "active" : ""}" 
-           data-index="${actualIndex}" />
-    `;
-  });
-  thumbnailsHTML += "</div>";
-
-  return `
-    <section class="product-section">
-      <!-- Gallery -->
-      <div class="product-gallery">
-        <div class="product-main-image">
-          <img src="${imagePaths[0]}" alt="Main Product Image" id="main-image" />
-        </div>
-        <div class="gallery-controls">
-          <button class="gallery-prev" id="gallery-prev">←</button>
-          <div class="gallery-dots">
-            ${dotsHTML}
-          </div>
-          <button class="gallery-next" id="gallery-next">→</button>
-        </div>
-        <div class="product-thumbnails">
-          ${thumbnailsHTML}
-        </div>
-      </div>
-
-      <!-- Product Options -->
-      <div class="product-options">
-        <h2>Alcami Elements</h2>
-        <div class="flavor-options">
-          <h3>Choose a flavor</h3>
-          <label><input type="radio" name="flavor" value="original" checked /> Original</label>
-          <label><input type="radio" name="flavor" value="matcha" /> Matcha</label>
-          <label><input type="radio" name="flavor" value="cacao" /> Cacao</label>
-        </div>
-        <div class="purchase-options">
-          <h3>Choose purchase type</h3>
-          <label><input type="radio" name="purchase" value="single" checked /> Single Kit Subscription</label>
-          <label><input type="radio" name="purchase" value="double" /> Double Kit Subscription</label>
-          <label><input type="radio" name="purchase" value="try" /> Try Once</label>
-        </div>
-        <button class="add-to-cart-btn" id="add-to-cart-btn">Add to Cart →</button>
-      </div>
-    </section>
-  `;
+  return thumbnails.map((src, index) => 
+    `<div class="product-thumbnail ${index === 0 ? 'active' : ''}" data-slide="${index}">
+      <img src="${src}" alt="Thumbnail ${index + 1}" loading="lazy" />
+    </div>`
+  ).join('');
 }
 
-export function initProductSection(imagePaths) {
-  let currentIndex = 0;
-
-  const mainImage = document.getElementById('main-image');
-  const thumbnails = document.querySelectorAll('.product-thumbnails img');
-  const dots = document.querySelectorAll('.gallery-dots .gallery-dot');
-  const prevBtn = document.getElementById('gallery-prev');
-  const nextBtn = document.getElementById('gallery-next');
-  const addToCartBtn = document.getElementById('add-to-cart-btn');
-
-  // Set initial image
-  mainImage.src = imagePaths[currentIndex];
-
-  // Navigation buttons
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
-    updateCarousel();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % imagePaths.length;
-    updateCarousel();
-  });
-
-  // Dot click
-  dots.forEach(dot => {
-    dot.addEventListener('click', function () {
-      currentIndex = parseInt(this.dataset.index, 10);
-      updateCarousel();
+export function initProductSection() {
+  $(document).ready(function() {
+    // Initialize main slider with proper constraints
+    $('.product-main-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      dots: true,
+      appendDots: $('.product-dots'),
+      autoplay: false,
+      infinite: false, // Prevent infinite loop which can cause width issues
+      adaptiveHeight: true,
+      cssEase: 'linear',
+      waitForAnimate: false
+    });
+    
+    // Set up custom navigation
+    $('.custom-prev-product').on('click', function() {
+      $('.product-main-slider').slick('slickPrev');
+    });
+    
+    $('.custom-next-product').on('click', function() {
+      $('.product-main-slider').slick('slickNext');
+    });
+    
+    // Thumbnail click functionality
+    $('.product-thumbnail').on('click', function() {
+      const slideIndex = $(this).data('slide');
+      $('.product-main-slider').slick('slickGoTo', slideIndex);
+      
+      // Update active thumbnail
+      $('.product-thumbnail').removeClass('active');
+      $(this).addClass('active');
+    });
+    
+    // Keep thumbnails in sync with slider
+    $('.product-main-slider').on('afterChange', function(event, slick, currentSlide) {
+      $('.product-thumbnail').removeClass('active');
+      $(`.product-thumbnail[data-slide="${currentSlide}"]`).addClass('active');
+    });
+    
+    // Fix any potential width issues
+    $(window).on('load resize', function() {
+      setTimeout(function() {
+        $('.product-main-slider .slick-list, .product-main-slider .slick-track').css({
+          'width': '100%'
+        });
+      }, 100);
+    });
+    
+    // Update Add to Cart link based on radio selections
+    updateAddToCartLink();
+    
+    // Add event listeners for radio button changes
+    $('input[name="flavor"], input[name="purchase-type"]').change(function() {
+      updateAddToCartLink();
     });
   });
+}
 
-  // Thumbnail click
-  thumbnails.forEach(thumb => {
-    thumb.addEventListener('click', function () {
-      currentIndex = parseInt(this.dataset.index, 10);
-      updateCarousel();
-    });
-  });
-
-  function updateCarousel() {
-    mainImage.style.opacity = '0.5';
-    setTimeout(() => {
-      mainImage.src = imagePaths[currentIndex];
-      mainImage.style.opacity = '1';
-    }, 150);
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentIndex);
-    });
-
-    thumbnails.forEach((thumb) => {
-      const actualIndex = parseInt(thumb.dataset.index, 10);
-      thumb.classList.toggle('active', actualIndex === currentIndex);
-    });
+// Function to update the Add to Cart link based on selections
+function updateAddToCartLink() {
+  const flavor = $('input[name="flavor"]:checked').val();
+  const purchaseType = $('input[name="purchase-type"]:checked').val();
+  
+  // Create cart link based on selections
+  let cartLink = "https://example.com/cart?product=alcami-elements";
+  
+  if (flavor) {
+    cartLink += `&flavor=${flavor}`;
   }
-
-  // Flavor + Purchase option logic
-  function updateAddToCartLink() {
-    const selectedFlavor = document.querySelector('input[name="flavor"]:checked').value;
-    const selectedPurchase = document.querySelector('input[name="purchase"]:checked').value;
-
-    const prices = {
-      single: { original: 37, matcha: 37, cacao: 37 },
-      double: { original: 68, matcha: 68, cacao: 68 },
-      try: { original: 46, matcha: 46, cacao: 46 },
-    };
-
-    const price = prices[selectedPurchase][selectedFlavor];
-    addToCartBtn.textContent = `Add to Cart ($${price}) →`;
-    addToCartBtn.onclick = () => {
-      window.location.href = `https://shop.alcamielements.com/cart/add?product=${selectedFlavor}-${selectedPurchase}&price=${price}`;
-    };
+  
+  if (purchaseType) {
+    cartLink += `&type=${purchaseType}`;
   }
-
-  // Attach radio change events
-  document.querySelectorAll('input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', updateAddToCartLink);
-  });
-
-  updateAddToCartLink(); // initialize
+  
+  // Update the href attribute of the Add to Cart button
+  $('#add-to-cart').attr('href', cartLink);
+  
+  // Log for debugging
+  console.log(`Updated cart link: ${cartLink}`);
 }

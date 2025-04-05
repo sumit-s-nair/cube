@@ -7,6 +7,9 @@ import { createShilajitSection } from "./main-components/shilajit.js";
 import { createSubscription } from "./main-components/subscription.js";
 import { createMorningRitual } from "./main-components/morning-ritual.js";
 import { createCounterSection, initCounterSection } from "./main-components/counter-section.js";
+import { createComparisonSection } from "./main-components/comparison-section.js";
+import { createFoundersSection } from "./main-components/founders-section.js";
+import { createTestimonialSection, initTestimonialSection } from "./main-components/testimonial-section.js";
 
 function createMain() {
   const mainContent = `
@@ -18,6 +21,9 @@ function createMain() {
     ${createSubscription()}
     ${createMorningRitual()}
     ${createCounterSection()}
+    ${createComparisonSection()}
+    ${createFoundersSection()}
+    ${createTestimonialSection()}
   `;
   console.log("Generated Main Content:", mainContent);
   return mainContent;
@@ -58,6 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize counter section
   initCounterSection();
+  
+  // Initialize testimonial section
+  initTestimonialSection();
+  
+  // Initialize product section
+  initProductSection();
 });
 
 function initializeHeader() {

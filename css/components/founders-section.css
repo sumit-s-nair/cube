@@ -1,0 +1,123 @@
+.founders-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founders-container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.founders-video {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.play-button img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.play-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.founders-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.founders-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  min-width: 300px;
+}
+
+.founders-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.founders-description {
+  font-size: 1rem;
+  color: var(--color-gray);
+  line-height: 1.5;
+}
+
+.about-us-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--website-gold);
+  color: var(--color-black);
+  width: 200px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.about-us-btn:hover {
+  background-color: var(--color-dark-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+  .video-thumbnail {
+    max-width: 100%;
+  }
+
+  .founders-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
