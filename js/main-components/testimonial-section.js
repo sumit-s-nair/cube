@@ -19,7 +19,7 @@ export function createTestimonialSection() {
             ${createTestimonials()}
           </div>
           <!-- Pagination -->
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination testimonial-pagination"></div>
         </div>
       </div>
     </section>
@@ -124,7 +124,7 @@ export function initTestimonialSection() {
         prevEl: ".testimonial-prev-btn",
       },
       pagination: {
-        el: ".swiper-pagination",
+        el: ".testimonial-pagination",
         clickable: true,
       },
       autoplay: {
