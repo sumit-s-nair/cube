@@ -5,10 +5,10 @@ export function createTestimonialSection() {
         <div class="testimonial-heading-container">
           <h2 class="testimonial-heading">What our customers are saying</h2>
           <div class="testimonial-nav-buttons">
-            <button class="custom-prev">
+            <button class="prev-btn">
               <img src="assets/icons/arrow-left.svg" alt="Previous" />
             </button>
-            <button class="custom-next">
+            <button class="next-btn">
               <img src="assets/icons/arrow-left.svg" alt="Next" />
             </button>
           </div>
@@ -141,11 +141,11 @@ export function initTestimonialSection() {
     });
 
     // Set up custom navigation
-    $(".custom-prev").on("click", function () {
+    $(".prev-btn").on("click", function () {
       $(".testimonial-slider").slick("slickPrev");
     });
 
-    $(".custom-next").on("click", function () {
+    $(".next-btn").on("click", function () {
       $(".testimonial-slider").slick("slickNext");
     });
   });
