@@ -1,40 +1,51 @@
-.testimonial-section {
+/* Product Section */
+.product-section {
   width: 100%;
   padding: 4rem 2rem;
-  background-color: #f0efeb;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.testimonial-container {
+.product-container {
   max-width: 1200px;
   width: 100%;
-  text-align: center;
-  position: relative;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-.testimonial-heading-container {
+.product-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product-heading-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 600px;
 }
 
-.testimonial-heading {
-  font-size: 2.5rem;
+.product-heading {
+  font-size: 2rem;
   font-weight: 600;
   color: var(--color-dark-gray);
   margin: 0;
 }
 
-.testimonial-nav-buttons {
+.product-nav-buttons {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 1rem;
 }
 
-.testimonial-nav-buttons button {
+.product-nav-buttons button {
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -47,214 +58,45 @@
   align-items: center;
 }
 
-.testimonial-nav-buttons button:hover {
+.product-nav-buttons button:hover {
   background-color: #000;
   color: #fff;
 }
 
-.testimonial-nav-buttons button img {
+.product-nav-buttons button img {
   width: 15px;
   height: 15px;
 }
 
-.testimonial-subheading {
-  font-size: 1rem;
-  color: var(--color-gray);
-  margin-bottom: 3rem;
-}
-
-.testimonial-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.testimonial-slider {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.testimonial-card {
-  flex: 0 0 auto; 
-  width: calc(33.333% - 20px); /* For 3 slides at a time */
-  margin: 0 10px;
-  box-sizing: border-box;
-  background-color: var(--color-white);
-  border-radius: 10px;
-  padding: 1.5rem;
-  text-align: left;
-  height: 100%;
-}
-
-.testimonial-rating {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 1rem;
-}
-
-.testimonial-rating img {
-  width: 16px;
-  height: 16px;
-}
-
-.testimonial-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-dark-gray);
-  margin-bottom: 1.5rem;
-  min-height: 80px;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.author-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--website-gold);
-}
-
-.author-info {
-  text-align: left;
-}
-
-.author-name {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-dark-gray);
-  margin: 0;
-}
-
-.author-position {
-  font-size: 0.875rem;
-  color: var(--color-gray);
-  margin: 0;
-}
-
-.testimonial-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--color-dark-gray);
-  color: var(--color-white);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.prev-btn {
-  left: -20px;
-}
-
-.next-btn {
-  right: -20px;
+.custom-next-product {
   transform: rotate(180deg);
 }
 
-.testimonial-prev-btn,
-.testimonial-next-btn {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.product-dots {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.testimonial-prev-btn:hover,
-.testimonial-next-btn:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.testimonial-indicators {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
   gap: 0.5rem;
 }
 
-.indicator {
-  width: 10px;
-  height: 10px;
-  background-color: var(--color-gray);
-  border-radius: 50%;
-  border: 1px solid var(--color-dark-gray);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Slick Slider styles */
-.slick-prev,
-.slick-next {
+.product-dots .slick-dots {
   position: static;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 50%;
-  z-index: 1;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin: 0 5px;
-  transform: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: auto;
 }
 
-.slick-prev:hover,
-.slick-next:hover {
-  background-color: #7a7a7a;
-}
-
-.slick-prev:hover:before,
-.slick-next:hover:before {
-  color: #fff;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  font-family: "slick";
-  font-size: 20px;
-  color: #444444;
-  opacity: 1;
-}
-
-.slick-dots {
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  right: 0;
-  display: block;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.slick-dots li {
+.product-dots .slick-dots li {
   margin: 0 5px;
 }
 
-.slick-dots li button {
+.product-dots .slick-dots li button {
   width: 12px;
   height: 12px;
+  padding: 0;
 }
 
-.slick-dots li button:before {
+.product-dots .slick-dots li button:before {
   width: 10px;
   height: 10px;
   content: "";
@@ -264,193 +106,1120 @@
   background-color: transparent;
 }
 
-.slick-dots li.slick-active button:before {
-  background-color: #313131;
+.product-dots .slick-dots li.slick-active button:before {
+  background-color: #000;
   opacity: 1;
 }
 
-.slick-dots {
-  bottom: -40px;
-}
-
-.slick-dots li button:before {
-  padding: 0;
-  color: var(--color-gray);
-  opacity: 0.5;
-  border: 1px solid var(--color-dark-gray);
-  border-radius: 50%;
-}
-
-.slick-dots li.slick-active button:before {
-  color: var(--website-gold);
-  opacity: 1;
-}
-
-.custom-next {
-  transform: rotate(180deg);
-}
-
-.testimonial-slick-slider {
+/* Product Gallery Styles */
+.product-gallery {
+  flex: 1;
   display: flex;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  overflow: visible; /* Changed from hidden to visible */
 }
 
-/* Override any generic slick styles with more specific selectors */
-.testimonial-section .slick-prev,
-.testimonial-section .slick-next {
-  position: static;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 50%;
-  z-index: 1;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin: 0 5px;
-  transform: none;
-}
-
-/* Scope Slick styles to the testimonial section */
-.testimonial-section .slick-prev,
-.testimonial-section .slick-next {
-  position: static;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 50%;
-  z-index: 1;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin: 0 5px;
-  transform: none;
-}
-
-.testimonial-section .slick-dots {
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  right: 0;
-  display: block;
+.product-main-slider {
+  margin-bottom: 1rem;
   width: 100%;
+  max-width: 600px;
+  text-align: center;
+  overflow: visible; /* Changed from hidden to visible */
+}
+
+/* Remove forced width */
+.product-main-slider .slick-list,
+.product-main-slider .slick-track {
+  width: auto !important; /* Changed from 100% to auto */
+}
+
+.product-main-slider img {
+  display: block; /* Added display block */
+  width: 100%; /* Changed from auto to 100% */
+  height: auto; /* Keep this */
+  max-height: 400px;
   margin: 0 auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure slick slider is showing content properly */
+.product-main-slider .slick-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.product-main-slider .slick-slide.slick-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Fix for slick slide container */
+.product-main-slider .slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Override any Slick CSS that might be hiding content */
+.slick-slider .slick-list .slick-track .slick-slide.slick-active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 1;
+}
+
+.product-thumbnail-slider {
+  width: 100%;
+}
+
+.product-thumbnail-slider .slick-slide {
+  padding: 0.25rem;
+}
+
+.product-thumbnail-slider img {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.product-thumbnail-slider .slick-current img {
+  border-color: var(--website-gold);
+}
+
+.product-thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.product-thumbnail {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.product-thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.product-thumbnail {
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 80px;
+  width: 80px;
+}
+
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.product-thumbnail.active img {
+  border-color: var(--website-gold);
+}
+
+.product-thumbnail:hover {
+  transform: translateY(-2px);
+}
+
+/* Slick arrow styles */
+.product-gallery .slick-prev,
+.product-gallery .slick-next {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-gallery .slick-prev:before,
+.product-gallery .slick-next:before {
+  color: var(--color-dark-gray);
+}
+
+/* Thumbnails */
+.product-thumbnails {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.thumbnails-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.product-thumbnails img {
+  width: calc(25% - 0.4rem);
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.product-thumbnails img.active {
+  border-color: var(--color-primary);
+}
+
+/* Product Details Styles */
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 2rem;
+}
+
+.product-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rating-stars {
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+.rating-text {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-dark-gray);
+}
+
+.product-options-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+/* Flavor Options Styles */
+.product-flavors {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  width: 478px;
+  height: 220px;
+}
+
+.flavor-option {
+  position: relative;
+  width: 150px;
+  height: 180px;
+  background: #f9f9f9;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.flavor-option.original {
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.flavor-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.flavor-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.radio-circle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 10px;
+  top: 10px;
+  background: #f8f8f8;
+  border: 1px solid #919798;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.radio-inner {
+  position: absolute;
+  width: 6.5px;
+  height: 6.5px;
+  left: 2px;
+  top: 2.6px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.flavor-name {
+  position: absolute;
+  left: 30px;
+  top: 8px;
+  font-family: "NewRailAlphabet";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: justify;
+  color: #919798;
+}
+
+.flavor-image {
+  position: absolute;
+  width: 67px;
+  height: 112px;
+  left: 42px;
+  top: 45px;
+  object-fit: contain;
+}
+
+.best-seller-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 7px 6px;
+  position: absolute;
+  width: 78px;
+  height: 17px;
+  left: calc(50% - 78px / 2);
+  top: 162px;
+  background: linear-gradient(90deg, #a27533 0%, #fac568 100%);
+  border-radius: 6px 0px;
+}
+
+.best-seller-tag span {
+  font-family: "NewRailAlphabet";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 9px;
+  color: #ffffff;
+  text-transform: uppercase;
+  width: 100%;
   text-align: center;
 }
 
-/* Swiper styles for testimonial section */
-.testimonial-swiper {
+/* Dynamic radio button selection */
+.flavor-option input[type="radio"]:checked + .flavor-content .radio-inner {
+  background: linear-gradient(90deg, #9e6718 0%, #ffb545 100%);
+  opacity: 1;
+}
+
+.flavor-option input[type="radio"]:checked + .flavor-content .flavor-name {
+  background: linear-gradient(90deg, #9e6718 0%, #ffb545 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .product-flavors {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flavor-option {
+    margin-bottom: 20px;
+  }
+}
+
+/* Pricing Options Styles */
+.pricing-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--website-gold);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pricing-option {
+  position: relative;
   width: 100%;
-  overflow: hidden;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  background-color: var(--color-dark-gray);
-  color: var(--color-white);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-pagination-bullet {
-  background-color: var(--color-gray);
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--website-gold);
-}
-
-/* Navigation button styles */
-.testimonial-prev-btn,
-.testimonial-next-btn {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.pricing-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.pricing-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #b8b8b8;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+/* Radio button styling */
+.pricing-radio {
+  position: absolute;
+  left: 22px;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f8f8f8;
+  border: 1px solid #dea453;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-radio-inner {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.pricing-option
+  input[type="radio"]:checked
+  + .pricing-content
+  .pricing-radio-inner {
+  background: linear-gradient(90deg, #9e6718 0%, #ffb545 100%);
+}
+
+/* Header styling for options */
+.pricing-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  margin-top: 0.5rem;
+}
+
+.pricing-label {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 20px;
+  color: #322d2d;
+}
+
+.pricing-value-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricing-value {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 20px;
+  color: #322d2d;
+}
+
+.pricing-value del {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 20px;
+  color: #919798;
+  text-decoration-line: line-through;
+}
+
+/* Most Popular Tag */
+.popular-tag-container {
+  width: 100%;
+  height: 43px;
+  background: linear-gradient(90deg, #a27533 0%, #fac568 100%);
+  border-radius: 6px 6px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.testimonial-prev-btn:hover,
-.testimonial-next-btn:hover {
-  background-color: #000;
-  color: #fff;
+.most-popular-tag {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
 }
 
-.testimonial-prev-btn img,
-.testimonial-next-btn img {
-  width: 15px;
-  height: 15px;
+/* Subscription details */
+.subscription-details {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
 }
 
-.testimonial-next-btn img.custom-next {
-  transform: rotate(180deg);
+.subscription-details::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #919798;
+  opacity: 0.5;
 }
 
-/* Swiper pagination styles */
-.swiper-pagination-bullet {
-  background-color: var(--color-gray);
+.subscription-included {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #322d2d;
+  text-align: left;
+  margin-bottom: 0.5rem;
 }
 
-.swiper-pagination-bullet-active {
-  background-color: var(--website-gold);
+.subscription-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+}
+
+.subscription-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12px;
+  height: 9px;
+}
+
+.subscription-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.subscription-text {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: #322d2d;
+  text-transform: capitalize;
+}
+
+.highlight {
+  font-weight: 700;
+}
+
+/* Product images */
+.subscription-products {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.product-box {
+  border: 1px solid #919798;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.monthly-product {
+  flex: 1;
+  max-width: 166px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.monthly-product-title {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6f7577;
+  margin-bottom: 5px;
+}
+
+.monthly-product img {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+}
+
+.one-time-products {
+  max-width: 328px;
+  height: auto;
+  object-fit: contain;
+}
+
+.one-time-label {
+  font-family: "NewRailAlphabet", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6f7577;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.one-time-products img {
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Subscription option with "Most Popular" */
+.pricing-option-popular .pricing-content {
+  padding-top: 3.5rem;
+  height: 100%;
+}
+
+/* Make the most popular option taller */
+.pricing-option-popular {
+  min-height: 590px;
+}
+
+@media (max-width: 768px) {
+  .subscription-products {
+    flex-direction: column;
+  }
+
+  .monthly-product,
+  .one-time-products {
+    max-width: 100%;
+  }
+
+  .pricing-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pricing-label,
+  .pricing-value {
+    font-size: 18px;
+  }
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--website-gold);
+  color: var(--color-black);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--color-dark-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .testimonial-card {
-    width: calc(50% - 20px); /* For 2 slides at a time */
+  .product-container {
+    flex-direction: column;
+  }
+
+  .product-gallery,
+  .product-details {
+    width: 100%;
+  }
+
+  .product-flavors {
+    justify-content: center;
+  }
+
+  .product-main-slider img {
+    max-width: 70%;
+    max-height: 350px;
+  }
+
+  .product-thumbnails-grid {
+    max-width: 70%;
+  }
+
+  .product-gallery {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .product-details {
+    padding-left: 0;
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .testimonial-section {
-    padding: 3rem 1rem;
+  .product-section {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .testimonial-card {
-    flex: 0 0 100%;
+  .product-container {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .testimonial-heading {
+  .product-gallery {
+    max-width: 100%;
+  }
+
+  .product-main-image img {
+    max-width: 300px;
+  }
+
+  .thumbnails-row {
+    flex-wrap: wrap;
+  }
+
+  .product-thumbnails img {
+    width: calc(50% - 0.25rem);
+    height: 60px;
+  }
+
+  .product-details {
+    text-align: center;
+  }
+
+  .product-pricing {
+    align-items: center;
+  }
+
+  .product-title {
     font-size: 2rem;
   }
 
-  .prev-btn {
-    left: -10px;
+  .product-flavors {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .next-btn {
-    right: -10px;
-  }
-
-  .slick-dots {
-    margin-left: 0;
-    display: block;
-    margin-top: 15px;
-  }
-
-  .testimonial-heading-container {
+  .product-heading-container {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
   }
 
-  .testimonial-nav-buttons {
+  .product-nav-buttons {
     margin-top: 1rem;
+  }
+
+  .product-thumbnails-grid {
+    max-width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 350px;
+  }
+
+  .product-thumbnail {
+    height: 50px;
+    width: 50px;
+    height: 60px;
+    width: 60px;
+  }
+
+  .subscription-products {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pricing-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .product-main-slider img {
+    max-height: 300px;
+  }
+}
+
+/* Direct fix for slider image visibility issue */
+.product-main-slider .slick-slide {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: auto !important;
+}
+
+.product-main-slider .slick-slide:not(.slick-active) {
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+.product-main-slider .slick-slide.slick-active {
+  position: relative !important;
+  left: auto !important;
+}
+
+.product-main-slider img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+}
+
+/* Fix for slider track and list dimensions */
+.product-main-slider,
+.product-main-slider .slick-list,
+.product-main-slider .slick-track,
+.product-main-slider .slick-slide,
+.product-main-slider .slick-slide > div {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Force slick slider to show images */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: none !important;
+  width: 100% !important;
+}
+
+/* Add this at the end to override any other styles */
+
+/* Keep these critical fixes at the end to ensure images display properly */
+.product-main-slider .slick-slide {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: auto !important;
+}
+
+/* Restore aesthetics while keeping fixes */
+.product-main-slider .slick-slide:not(.slick-active) {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important; /* Hide non-active slides but keep them in the DOM */
+}
+
+.product-main-slider .slick-slide.slick-active {
+  position: relative !important;
+  left: auto !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s ease;
+}
+
+/* Style the product images but keep display fixes */
+.product-main-slider img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make container height fixed to prevent jumping */
+.product-main-slider,
+.product-main-slider .slick-list {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reset transform that was causing issues but restore transition */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transition: transform 0.5s ease !important;
+}
+
+/* Restore custom navigation styling */
+.product-nav-buttons {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Remove any !important rules that might be affecting aesthetics */
+.product-gallery {
+  overflow: visible; /* Keep this to ensure images aren't cut off */
+}
+
+/* Scope Slick styles to the product section */
+.product-section .slick-prev,
+.product-section .slick-next {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-section .slick-prev:hover,
+.product-section .slick-next:hover {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+}
+
+.product-section .slick-prev:before,
+.product-section .slick-next:before {
+  color: var(--color-dark-gray);
+}
+
+.product-section .slick-dots {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.product-section .slick-dots li {
+  margin: 0 5px;
+}
+
+.product-section .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+
+.product-section .slick-dots li button:before {
+  width: 10px;
+  height: 10px;
+  content: "";
+  border: 1px solid #333;
+  border-radius: 50%;
+  opacity: 1;
+  background-color: transparent;
+}
+
+.product-section .slick-dots li.slick-active button:before {
+  background-color: var(--color-dark-gray);
+  opacity: 1;
+}
+
+/* Fix for slider visibility issues */
+.product-main-slider .slick-slide {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: auto !important;
+}
+
+.product-main-slider .slick-slide:not(.slick-active) {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+}
+
+.product-main-slider .slick-slide.slick-active {
+  position: relative !important;
+  left: auto !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s ease;
+}
+
+.product-main-slider img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for slider track and list dimensions */
+.product-main-slider,
+.product-main-slider .slick-list,
+.product-main-slider .slick-track,
+.product-main-slider .slick-slide,
+.product-main-slider .slick-slide > div {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reset transform and restore transition */
+.product-section .slick-slider .slick-track,
+.product-section .slick-slider .slick-list {
+  transition: transform 0.5s ease !important;
+  width: 100% !important;
+}
+
+/* Restore custom navigation styling */
+.product-nav-buttons {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Ensure thumbnails are styled correctly */
+.product-thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.product-thumbnail {
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 80px;
+  width: 80px;
+}
+
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.product-thumbnail.active img {
+  border-color: var(--website-gold);
+}
+
+.product-thumbnail:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-main-slider img {
+    max-height: 300px;
+  }
+
+  .product-thumbnails-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 350px;
+  }
+
+  .product-thumbnail {
+    height: 60px;
+    width: 60px;
   }
 }
