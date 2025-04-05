@@ -111,64 +111,43 @@ function createTestimonials() {
 }
 
 export function initTestimonialSection() {
-  // Use jQuery's document ready instead of vanilla JS
-  $(document).ready(function() {
-    console.log("Document ready, initializing testimonial slider");
-    
-    // Use jQuery to select elements
-    const $testimonialsContainer = $('.testimonial-section');
-    if ($testimonialsContainer.length === 0) {
-      console.error("Testimonial section not found");
-      return;
-    }
-    
-    const $slider = $testimonialsContainer.find('.testimonial-slick-slider');
-    const $prevBtn = $testimonialsContainer.find('.testimonial-prev-btn');
-    const $nextBtn = $testimonialsContainer.find('.testimonial-next-btn');
-    
-    // Check if slider is already initialized
+  $(document).ready(function () {
+    const $slider = $('.testimonial-slick-slider');
+
+    // Ensure the slider is not already initialized
     if ($slider.hasClass('slick-initialized')) {
-      console.log("Testimonial slider already initialized");
+      console.log('Testimonial slider already initialized');
       return;
     }
-    
-    // Initialize slick carousel using jQuery
-    console.log("Initializing Slick slider");
-    try {
-      $slider.slick({
-        dots: true,
-        infinite: true,
-        speed: 700,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: $prevBtn,
-        nextArrow: $nextBtn,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
+
+    // Initialize the testimonial slider
+    $slider.slick({
+      dots: true,
+      infinite: true,
+      speed: 700,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: $('.testimonial-prev-btn'),
+      nextArrow: $('.testimonial-next-btn'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
           },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
-      });
-      
-      console.log("Testimonial slider initialized successfully");
-    } catch (error) {
-      console.error("Error initializing Slick slider:", error);
-      // If Slick fails, we can still use our fallback
-      fallbackToCustomCarousel($slider[0], $prevBtn[0], $nextBtn[0]);
-    }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
   });
 }
 

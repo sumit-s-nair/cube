@@ -229,110 +229,39 @@ function createThumbnails() {
     .join("");
 }
 
-export function initProductSection(imagePaths) {
+export function initProductSection() {
   $(document).ready(function () {
-    // Preload first image for immediate display
-    const firstImage = new Image();
-    firstImage.src = "assets/images/product/main-product.png";
+    const $slider = $('.product-main-slider');
 
-    // Force images to load before slider initialization (add timestamp to prevent caching)
-    $(".product-main-slider img").each(function () {
-      $(this).attr("src", $(this).attr("src") + "?v=" + new Date().getTime());
-    });
-
-    // Destroy any existing slider
-    if ($(".product-main-slider").hasClass("slick-initialized")) {
-      $(".product-main-slider").slick("unslick");
+    // Ensure the slider is not already initialized
+    if ($slider.hasClass('slick-initialized')) {
+      console.log('Product slider already initialized');
+      return;
     }
 
-    // Initialize slider with working configuration
-    $(".product-main-slider").slick({
+    // Initialize the product slider
+    $slider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       fade: true,
       dots: true,
-      appendDots: $(".product-dots"),
+      appendDots: $('.product-dots'),
       autoplay: false,
       infinite: true,
       adaptiveHeight: false,
-      cssEase: "linear",
+      cssEase: 'linear',
       speed: 300,
-      waitForAnimate: false,
-      lazyLoad: "ondemand", // Try lazy loading with ondemand strategy
+      lazyLoad: 'ondemand',
     });
-
-    // Force slider refresh after initialization
-    setTimeout(function () {
-      $(".product-main-slider").slick("refresh");
-    }, 200);
 
     // Custom navigation handlers
-    $(".custom-prev-product").on("click", function () {
-      $(".product-main-slider").slick("slickPrev");
+    $('.custom-prev-product').on('click', function () {
+      $slider.slick('slickPrev');
     });
 
-    $(".custom-next-product").on("click", function () {
-      $(".product-main-slider").slick("slickNext");
-    });
-
-    // Thumbnail click functionality
-    $(".product-thumbnail").on("click", function () {
-      const slideIndex = $(this).data("slide");
-      $(".product-main-slider").slick("slickGoTo", slideIndex);
-
-      $(".product-thumbnail").removeClass("active");
-      $(this).addClass("active");
-    });
-
-    // Keep thumbnails in sync with slider
-    $(".product-main-slider").on(
-      "afterChange",
-      function (event, slick, currentSlide) {
-        $(".product-thumbnail").removeClass("active");
-        $(`.product-thumbnail[data-slide="${currentSlide}"]`).addClass(
-          "active"
-        );
-      }
-    );
-
-    // Fix width issues
-    $(window).on("load resize", function () {
-      setTimeout(function () {
-        $(
-          ".product-main-slider .slick-list, .product-main-slider .slick-track"
-        ).css({
-          width: "100%",
-        });
-      }, 100);
-    });
-
-    // Update Add to Cart link based on radio selections
-    updateAddToCartLink();
-
-    // Add event listeners for radio button changes
-    $('input[name="flavor"], input[name="purchase-type"]').change(function () {
-      updateAddToCartLink();
+    $('.custom-next-product').on('click', function () {
+      $slider.slick('slickNext');
     });
   });
-}
-
-// Function to update the Add to Cart link based on selections
-function updateAddToCartLink() {
-  const flavor = $('input[name="flavor"]:checked').val();
-  const purchaseType = $('input[name="purchase-type"]:checked').val();
-
-  // Create cart link based on selections
-  let cartLink = "https://example.com/cart?product=alcami-elements";
-
-  if (flavor) {
-    cartLink += `&flavor=${flavor}`;
-  }
-
-  if (purchaseType) {
-    cartLink += `&type=${purchaseType}`;
-  }
-
-  // Update the href attribute of the Add to Cart button
-  $("#add-to-cart").attr("href", cartLink);
 }

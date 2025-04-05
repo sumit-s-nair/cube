@@ -312,6 +312,33 @@
   transform: none;
 }
 
+/* Scope Slick styles to the testimonial section */
+.testimonial-section .slick-prev,
+.testimonial-section .slick-next {
+  position: static;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0 5px;
+  transform: none;
+}
+
+.testimonial-section .slick-dots {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .testimonial-card {

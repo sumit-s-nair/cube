@@ -1055,3 +1055,171 @@
 .product-gallery {
   overflow: visible; /* Keep this to ensure images aren't cut off */
 }
+
+/* Scope Slick styles to the product section */
+.product-section .slick-prev,
+.product-section .slick-next {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray);
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-section .slick-prev:hover,
+.product-section .slick-next:hover {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+}
+
+.product-section .slick-prev:before,
+.product-section .slick-next:before {
+  color: var(--color-dark-gray);
+}
+
+.product-section .slick-dots {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.product-section .slick-dots li {
+  margin: 0 5px;
+}
+
+.product-section .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+
+.product-section .slick-dots li button:before {
+  width: 10px;
+  height: 10px;
+  content: "";
+  border: 1px solid #333;
+  border-radius: 50%;
+  opacity: 1;
+  background-color: transparent;
+}
+
+.product-section .slick-dots li.slick-active button:before {
+  background-color: var(--color-dark-gray);
+  opacity: 1;
+}
+
+/* Fix for slider visibility issues */
+.product-main-slider .slick-slide {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: auto !important;
+}
+
+.product-main-slider .slick-slide:not(.slick-active) {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+}
+
+.product-main-slider .slick-slide.slick-active {
+  position: relative !important;
+  left: auto !important;
+  opacity: 1 !important;
+  transition: opacity 0.5s ease;
+}
+
+.product-main-slider img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for slider track and list dimensions */
+.product-main-slider,
+.product-main-slider .slick-list,
+.product-main-slider .slick-track,
+.product-main-slider .slick-slide,
+.product-main-slider .slick-slide > div {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reset transform and restore transition */
+.product-section .slick-slider .slick-track,
+.product-section .slick-slider .slick-list {
+  transition: transform 0.5s ease !important;
+  width: 100% !important;
+}
+
+/* Restore custom navigation styling */
+.product-nav-buttons {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Ensure thumbnails are styled correctly */
+.product-thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.product-thumbnail {
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 80px;
+  width: 80px;
+}
+
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.product-thumbnail.active img {
+  border-color: var(--website-gold);
+}
+
+.product-thumbnail:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-main-slider img {
+    max-height: 300px;
+  }
+
+  .product-thumbnails-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 350px;
+  }
+
+  .product-thumbnail {
+    height: 60px;
+    width: 60px;
+  }
+}
